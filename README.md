@@ -4,6 +4,8 @@ _[Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137),
 [Pinar Alper](http://orcid.org/0000-0002-2224-0780); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester_
 
+<small><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small>
+
 <!--
 The following is a non-exhaustive list of topics for position statements reporting on experiences and impact:
 
