@@ -99,7 +99,7 @@ understanding Taverna provenance, yet PROV don't describe the structure of a
 [SCUFL2](http://www.essepuntato.it/lode/owlapi/http://taverna.incubator.apache.org/ns/2010/scufl2.ttl) vocabulary, which include many
 implementation details for the Taverna Engine,
 and so forming a meaningful query like
-"What is the provenance of calls to webservice X" means understanding the
+_"What is the value made by calls to webservice X"_ means understanding the
 whole conceptual model of Taverna workflow definitions.
 
 Therefore Taverna's PROV export also include an annotation with the
@@ -113,15 +113,13 @@ abstraction of the workflow execution, with direct shortcuts like
 [describedByProcess](https://w3id.org/ro/2016-01-28/wfprov/#describedByProcess)
 and
 [describedByParameter](https://w3id.org/ro/2016-01-28/wfprov/#describedByParameter)
-to avoid the PROV
+to bypass the indirection of PROV qualified terms; simplifying queries like
+_"Which web service consumed value Y?"_.
 
 The duality between wfdesc and wfprov is similar to the
 "future provenance" model of [P-Plan](http://purl.org/net/p-plan) and [OPMW](ttp://www.opmw.org/model/OPMW/#WorkflowTemplateProcess)
 and its [workflow templates](http://www.isi.edu/~gil/papers/garijo-etal-works14.pdf).
 
-
-
-_wfdesc, wfprov, tavernaprov_
 
 ## Provenance capture
 
@@ -158,18 +156,28 @@ The [scufl2-info](https://github.com/stain/scufl2-info)
 web-service provide a minimal [JSON-LD](http://json-ld.org/) wfprov/wfdesc representation
 identifying the URI as a provenance or workflow item, but (by design) not having access to the data bundle it can't say anything more.
 
-We found that these verbose identifiers don't play too well with
+## Interoperability issues
+
+We found that our UUID identifiers don't play too well with
 PROV Toolbox and the other
-PROV formats, e.g in PROV-N every identifier ending in "/" is registered as
+PROV formats, e.g in PROV-N, every URI ending in ``/`` is registered as
 a separate namespace.
+
+Similarly, OWL reasoning is not normally applied, so
+even though wfprov extends PROV in its ontology,
+we needed to include explicitly the
+derived PROV-O statements.
+
 
 ## Future work
 
 Facing the verbosity issue we are considering to split out wfprov statements
-from a different file than the PROV Turtle file -
-as a ZIP archive the Taverna data bundle can contain
-many provenance formats. Similarly splitting out PROV-O qualified terms could be
-worth considering.
+to a different file; as a ZIP archive the Taverna data bundle can contain
+many provenance formats.
+
+Similarly splitting out the details of
+PROV-O qualified terms to a separate file is worth considering, this could also
+improve PROV visualization of workflow provenance.
 
 [Common Workflow Language](http://commonwl.org/) has created a
 workflow language specification, a reference implementation and a large community of workflow systems developing
