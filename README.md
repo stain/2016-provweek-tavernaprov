@@ -13,7 +13,7 @@
   + provenance
   + research object
   + reproducibility
- * Also available in formats:
+* Also available in formats:
   + [xhtml](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
   + [pdf](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.pdf)
   + [turtle](http://rdf.greggkellogg.net/distiller?format=turtle&in_fmt=rdfa&uri=https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
