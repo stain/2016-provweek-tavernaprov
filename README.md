@@ -1,4 +1,4 @@
-# TavernaProv
+# Tracking workflow execution with TavernaProv
 
 _[Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137),
@@ -7,7 +7,7 @@ _[Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 <small><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small>
 
 <!--
-The following is a non-exhaustive list of topics for position statements reporting on experiences and impact:
+The following is a non-exhaustive list of topics for position statemepents reporting on experiences and impact:
 
     API and software that use PROV
     Datasets and resources that use PROV
@@ -40,6 +40,10 @@ workflow runs, intermediate values and user interactions, both as an aid for
 debugging while designing the workflow, but also as a record for later
 reproducibility and comparison.
 
+Taverna also records provenance of the evolution
+of the workflow definition
+(including a chain of `wasDerivedFrom` relations),
+attributions and annotations.
 
 ## Data bundle
 
@@ -65,16 +69,15 @@ or modified with the [DataBundle API](https://github.com/apache/incubator-tavern
 ## Abstraction levels
 
 [PROV](https://www.w3.org/TR/prov-dm/)
-is a generic model for describing provenance, and a scientific workflow
-run with processors and data values naturally match the
+is a generic model for describing provenance. While this means there are
+generally many multiple ways to express the same history in PROV,
+a scientific workflow run with processors and data values naturally match the
 [`Activity`]((https://www.w3.org/TR/prov-dm/#term-entity)) and [`Entity`](https://www.w3.org/TR/prov-dm/#term-entity) relations
 [`wasGeneratedBy`](https://www.w3.org/TR/prov-dm/#dfn-wasgeneratedby) and
 [`used`](https://www.w3.org/TR/prov-dm/#dfn-used).
 
 However, using PROV-O to describe the details of a Taverna execution
-meant a significant [increase in verbosity](https://github.com/apache/incubator-taverna-engine/blob/master/taverna-prov/example/helloanyone.bundle/workflowrun.prov.ttl).
-
-To simplify query and interoperability with PROV tools, we declare
+meant a significant [increase in verbosity](https://github.com/apache/incubator-taverna-engine/blob/master/taverna-prov/example/helloanyone.bundle/workflowrun.prov.ttl).  To simplify query and interoperability with PROV tools, we declare
 relations both with [starting point terms](https://www.w3.org/TR/prov-o/#description-starting-point-terms)
 and as [qualified terms](https://www.w3.org/TR/prov-o/#description-qualified-terms),
 e.g. to represent an `Activity` that
@@ -83,44 +86,76 @@ both a direct [used](http://www.w3.org/TR/prov-o/#used), but also a
 [qualifiedUsage](http://www.w3.org/TR/prov-o/#qualifiedUsage) to a
 [Usage](http://www.w3.org/TR/prov-o/#Usage) that specify [hadRole](http://www.w3.org/TR/prov-o/#hadRole) and [entity](http://www.w3.org/TR/prov-o/entity).
 
-One interoperability design question for representing workflow runs is how much of the
+
+<!--
+"PROV as an XML"
+
+Develop more the CWL and if you can lever in Research Objects all to the good
+Needs a summary of thoughts wrt PROV and where its strengths/weaknesses for workflow collection in practice.
+-->
+
+PROV deliberately does not mandate how to make the
+design decisions on
+what activities, entities
+and agents participate in a particular scenario,
+but for interoperability purposes this
+flexibility means that PROV is a kind of
+"XML for provenance" - a common
+language with a predefined semantics,
+which can be applied in many different ways.
+
+One interoperability design question for representing computational
+workflow runs is how much of the
 workflow engine's internal logic and language should be explicit in the PROV
-representation.  As we primarily wanted to convey what happened in the workflow
+representation. As we primarily wanted to convey what happened in the workflow
 at the same granularity as its definition, we tried to hide provenance that
 would be intrinsic to the Taverna Engine, e.g. [implicit iteration](http://taverna.knowledgeblog.org/2010/12/13/iteration-in-taverna-workflows/) is
-not shown as a separate `Activity`. This mean TavernaProv might show
-an Activity generating a list of entiries (a [PROV Dictionary](https://www.w3.org/TR/prov-dictionary/#dictionary-ontological-definition))
-and the next Activity consume a value from that collection, seemingly generated out
-of nowhere.
+not shown as a separate `Activity`.
+
+However keeping provenance only at the dataflow level
+(input/outputs of workflow processes) meant that TavernaProv
+could not easily represent "deeper" provenance such as the
+intermediate values of [while-loops](http://dev.mygrid.org.uk/wiki/display/tav250/Loops)
+or intermittent failures that were automatically recovered by Taverna's [retry mechanism](http://dev.mygrid.org.uk/wiki/display/tav250/Retries), as we wanted to
+avoid [unrolled workflow provenance](https://www.sci.utah.edu/publications/davidson07/davidson-provenance-lebull-07.pdf).
+
 
 Keeping the link between the workflow definition and execution is essential to
-understanding Taverna provenance, yet PROV don't describe the structure of a
+understanding Taverna provenance, yet PROV doesn't describe the structure of a
 [Plan](http://www.w3.org/TR/prov-o/#Plan). Taverna's workflow definition is in Linked Data using the
-[SCUFL2](http://www.essepuntato.it/lode/owlapi/http://taverna.incubator.apache.org/ns/2010/scufl2.ttl) vocabulary, which include many
+[SCUFL2](http://www.essepuntato.it/lode/owlapi/http://taverna.incubator.apache.org/ns/2010/scufl2.ttl) vocabulary, which includes many
 implementation details for the Taverna Engine,
 and so forming a meaningful query like
 _"What is the value made by calls to webservice X"_ means understanding the
 whole conceptual model of Taverna workflow definitions.
 
-Therefore Taverna's PROV export also include an annotation with the
+Therefore Taverna's PROV export also includes an
+annotation with the  
 [wfdesc](https://w3id.org/ro/2016-01-28/wfdesc/) abstraction of the
 workflow definition, embedding user annotations and higher-level
-information like [web service location](https://w3id.org/ro/2016-01-28/wf4ever/#rootURI). wfdesc deliberately leaves out execution details like iteration and parallelism controls.
+information like [web service location](https://w3id.org/ro/2016-01-28/wf4ever/#rootURI).
+_wfdesc_ deliberately leaves out execution details like iteration and parallelism controls
+as it primarily functions as a target for user-driven annotations about the
+workflow steps.
 
-Correspondingly the provenance trace
-includes a [wfprov](https://w3id.org/ro/2016-01-28/wfprov/)
+Correspondingly the provenance bundle from TavernaPROV
+includes a higher level [wfprov](https://w3id.org/ro/2016-01-28/wfprov/)
 abstraction of the workflow execution, with direct shortcuts like
 [describedByProcess](https://w3id.org/ro/2016-01-28/wfprov/#describedByProcess)
 and
 [describedByParameter](https://w3id.org/ro/2016-01-28/wfprov/#describedByParameter)
-to bypass the indirection of PROV qualified terms; simplifying queries like
+to bypass the indirection of PROV qualified terms; simplifying
+[queries](https://github.com/apache/incubator-taverna-engine/tree/master/taverna-prov#querying-provenance) like
 _"Which web service consumed value Y?"_.
 
 The duality between wfdesc and wfprov is similar to the
 "future provenance" model of [P-Plan](http://purl.org/net/p-plan) and [OPMW](ttp://www.opmw.org/model/OPMW/#WorkflowTemplateProcess)
-and its [workflow templates](http://www.isi.edu/~gil/papers/garijo-etal-works14.pdf).
+and its [workflow templates](http://www.isi.edu/~gil/papers/garijo-etal-works14.pdf),
+and similarly the the split between  "prospective provenance"
+and "retrospective provenance" of the
+[ProvONE Data Model for Scientific Workflow Provenance](http://vcvcomputing.com/provone/provone.html).
 
-
+<!--
 ## Provenance capture
 
 Taverna 2 captures workflow run provenance using a layer in the processor [dispatch stack](http://www.taverna.org.uk/pages/wp-content/uploads/2010/04/T2Architecture.pdf#page6) and recorded in
@@ -138,10 +173,10 @@ updated [hierarchical object tree](https://taverna.incubator.apache.org/javadoc/
 a workflow, which invoked several processors, which iterated over
 calls to service invocations (_activities_). Intermediate values are stored
 directly into the data bundle during the run.
+-->
 
 
-
-## Identifiers
+## Identifiers and interoperability
 
 A great advantage of using Linked Data was that we could use the same identifiers in all three formats. One challenge was that Taverna workflows are often run within a
 desktop user interface or on the command line, and with privacy concerns
@@ -156,33 +191,60 @@ The [scufl2-info](https://github.com/stain/scufl2-info)
 web-service provide a minimal [JSON-LD](http://json-ld.org/) wfprov/wfdesc representation
 identifying the URI as a provenance or workflow item, but (by design) not having access to the data bundle it can't say anything more.
 
-## Interoperability issues
 
-We found that our UUID identifiers don't play too well with
-PROV Toolbox and the other
-PROV formats, e.g in PROV-N, every URI ending in ``/`` is registered as
-a separate namespace.
+We found that our UUID-based URIs don't play too well with
+[PROV Toolbox](http://lucmoreau.github.io/ProvToolbox/) and alternative
+PROV formats like
+[PROV-N](https://www.w3.org/TR/prov-n/) and
+[PROV-XML](https://www.w3.org/TR/prov-xml/), as
+every URI ending in ``/`` is registered as
+a separate namespace in order to form valid QNames.
+A suggested improvement for TavernaProv
+is to generate [provly identifiers](https://github.com/lucmoreau/ProvToolbox/wiki/Mapping-PROV-Qualified-Names-to-xsd:QName#4-provly-identifiers).
 
-Similarly, OWL reasoning is not normally applied, so
-even though wfprov extends PROV in its ontology,
-we needed to include explicitly the
-derived PROV-O statements.
+Similarly, [OWL reasoning](https://www.w3.org/TR/owl2-profiles/#Reasoning_in_OWL_2_RL_and_RDF_Graphs_using_Rules) is not generally applied by PROV-O consumers, so even though
+_wfprov_ formally extends
+PROV in its ontology definitions, we needed to add explicitly the
+implied PROV-O statements in TavernaProv's Turtle output.
+
+
+## Common Workflow Language
+
+[Common Workflow Language](http://commonwl.org/) has created a
+workflow language [specification](http://www.commonwl.org/draft-3/),
+a reference implementation
+[cwltool](https://github.com/common-workflow-language/cwltool),
+and a large [community](http://www.commonwl.org/#Participating_Organizations)
+of workflow system developers who are adding
+CWL support across bioinformatics,
+including Apache Taverna and Galaxy. Unlike wfdesc, OPMW and P-Plan, CWL workflows are
+primarily intended to be executed,
+with a strong emphasis on the dataflow between
+command line tools packaged as [Docker](https://docker.com/) images.
+
+CWL is specified using [Schema Salad](http://www.commonwl.org/draft-3/SchemaSalad.html),
+which provides [JSON-LD](http://json-ld.org/) constructs in
+[YAML](http://yaml.org/). The CWL dataflow
+model is inspired by wfdesc and Apache Taverna and thus have similar
+execution semantics and provenance requirements.
+CWL is [planning its provenance format](https://github.com/common-workflow-language/common-workflow-language/issues/84)
+based on PROV-O, wfprov and JSON-LD. As one of the CWL adopters, Apache Taverna
+will naturally also aim to support the CWL provenance model.
+
 
 
 ## Future work
 
-Facing the verbosity issue we are considering to split out wfprov statements
-to a different file; as a ZIP archive the Taverna data bundle can contain
-many provenance formats.
-
-Similarly splitting out the details of
-PROV-O qualified terms to a separate file is worth considering, this could also
+To face the verbosity issue, we are considering to split out wfprov statements
+to a different file; as a ZIP archive the Taverna Data Bundle can contain
+many provenance formats. Similarly splitting out the details using
+PROV-O Qualified Terms to a separate file is worth considering, this could also
 improve PROV visualization of workflow provenance.
+Having such separate [PROV bundles](https://www.w3.org/TR/prov-dm/#component4)
+would also make it easier for Taverna to support the ProvONE model
+as an additional format.
 
-[Common Workflow Language](http://commonwl.org/) has created a
-workflow language specification, a reference implementation and a large community of workflow systems developing
-CWL support across bioinformatics, including Apache Taverna and Galaxy.
-
-CWL is [planning its provenance format](https://github.com/common-workflow-language/common-workflow-language/issues/84)
-based on PROV-O, wfprov and JSON-LD. As one of the CWL adopters, Apache Taverna
-will naturally also support this provenance model.
+[PROV Links](https://www.w3.org/TR/prov-links/) could be added to
+Research Object Bundles to relate its data files to the
+workflow provenance that made them - supporting multiple alternative
+identifiers for "the same" data.
