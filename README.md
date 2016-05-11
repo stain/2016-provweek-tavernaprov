@@ -8,6 +8,12 @@
 * Published: 2016-05-09
 * Modified: 2016-05-11
 * License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+* Keywords:
+  + scientific workflow
+  + provenance
+  + research object
+  + reproducibility
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
@@ -21,8 +27,9 @@ reproducibility and comparison.
 Taverna also records provenance of the evolution
 of the workflow definition
 (including a chain of `wasDerivedFrom` relations),
-attributions and annotations; for brevity here we focus only on the
-workflow run provenance.
+attributions and annotations; for brevity we here focus on
+how Taverna's workflow run provenance extends PROV and
+is embedded with Research Objects.
 
 ## Data bundle
 
