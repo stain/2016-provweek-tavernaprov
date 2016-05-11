@@ -1,8 +1,8 @@
 # Tracking workflow execution with TavernaProv
 
 * Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
-[Carole Goble](http://orcid.org/0000-0003-1219-2137),
-[Pinar Alper](http://orcid.org/0000-0002-2224-0780); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
+[Pinar Alper](http://orcid.org/0000-0002-2224-0780),
+[Carole Goble](http://orcid.org/0000-0003-1219-2137); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
 * Document id: https://github.com/stain/2016-provweek-tavernaprov/
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
