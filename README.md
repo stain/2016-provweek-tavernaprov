@@ -170,12 +170,13 @@ desktop user interface or on the command line, and with privacy concerns
 we didn't have the luxury of a server to mint URIs; we already [learnt our lesson with LSIDs](http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/) [7].
 
 Taverna therefore generate UUID-based structured `http://` URIs within [our namespaces](http://ns.taverna.org.uk/),
-e.g.
-* http://ns.taverna.org.uk/2011/run/d5ee659e-e11e-43a5-bc0a-58d93674e5e2/process/1e027057-2aeb-47f7-97dc-03e19e9772be/
-* http://ns.taverna.org.uk/2010/workflowBundle/2f0e94ef-b5c4-455d-aeab-1e9611f46b8b/workflow/HelloWorld/processor/hello/
+e.g.:
 
-The [scufl2-info](https://github.com/stain/scufl2-info)
-web-service provide a minimal [JSON-LD](http://json-ld.org/) wfprov/wfdesc representation
+* `http://ns.taverna.org.uk/2011/run/d5ee659e-e11e-43a5-bc0a-58d93674e5e2/process/1e027057-2aeb-47f7-97dc-03e19e9772be/`
+* `http://ns.taverna.org.uk/2010/workflowBundle/2f0e94ef-b5c4-455d-aeab-1e9611f46b8b/workflow/HelloWorld/processor/hello/`
+
+Resolving these URIs gives the [scufl2-info](https://github.com/stain/scufl2-info),
+web-service, which provide a minimal [JSON-LD](http://json-ld.org/) wfprov/wfdesc representation
 identifying the URI as a provenance or workflow item, but (by design) not having access to the data bundle it can't say anything more.
 
 
@@ -240,11 +241,11 @@ and usage.
 
 1.  Katherine Wolstencroft, Robert Haines, Donal Fellows, Alan Williams, David Withers, Stuart Owen, Stian Soiland-Reyes, Ian Dunlop, Aleksandra Nenadic, Paul Fisher, Jiten Bhagat, Khalid Belhajjame, Finn Bacall, Alex Hardisty, Abraham Nieva de la Hidalga, Maria P. Balcazar Vargas, Shoaib Sufi, Carole Goble (2013): **The Taverna workflow suite: designing and executing workflows of Web Services on the desktop, web or in the cloud.** In: _Nucleic Acids Research_, **41**(W1): W557–W561. [doi:10.1093/nar/gkt328](http://dx.doi.org/10.1093/nar/gkt328)
 2. Paolo Missier, Satya Sahoo, Jun Zhao, Carole Goble, Amit Sheth. (2010): **Janus: from Workflows to Semantic Provenance and Linked Open Data** in _Provenance and Annotation of Data and Processes, Third International Provenance and Annotation Workshop, (IPAW'10)_, 15–16 Jun 2010. Springer, Berlin: 129–141. [doi:10.1007/978-3-642-17819-1_16](http://dx.doi.org/10.1007/978-3-642-17819-1_16) [[pdf]](http://tw.rpi.edu/media/2013/12/31/96a5/IPAW2010_FP_Missier.pdf)
-3. Stian Soiland-Reyes, Matthew Gamble, Robert Haines (2014): **Research Object Bundle 1.0**. _researchobject.org Specification_. https://w3id.org/bundle/ 2014-11-05.  [doi:10.5281/zenodo.12586](http://dx.doi.org/10.5281/zenodo.12586)  
+3. Stian Soiland-Reyes, Matthew Gamble, Robert Haines (2014): **Research Object Bundle 1.0**. _researchobject.org Specification_. [https://w3id.org/bundle/](https://w3id.org/bundle/) 2014-11-05. [doi:10.5281/zenodo.12586](http://dx.doi.org/10.5281/zenodo.12586)  
 4. Khalid Belhajjame, Jun Zhao, Daniel Garijo, Matthew Gamble, Kristina Hettne, Raul Palma, Eleni Mina, Oscar Corcho, José Manuel Gómez-Pérez, Sean Bechhofer, Graham Klyne, Carole Goble (2015): **Using a suite of ontologies for preserving workflow-centric research objects**, _Web Semantics: Science, Services and Agents on the World Wide Web_. [doi:10.1016/j.websem.2015.01.003](http://dx.doi.org/doi:10.1016/j.websem.2015.01.003)
 5. Daniel Garijo, Yolanda Gil, Oscar Corcho (2014): **Towards workflow ecosystems through semantic and standard representations**. _Proceeding
 WORKS '14 Proceedings of the 9th Workshop on Workflows in Support of Large-Scale Science_. [doi:10.1109/WORKS.2014.13](http://dx.doi.org/10.1109/WORKS.2014.13) [[pdf]](http://conferences.computer.org/works/2014/papers/7067a094.pdf)
 6. Víctor Cuevas-Vicenttín, Parisa Kianmajd, Bertram Ludäscher, Paolo Missier, Fernando Chirigati, Yaxing Wei, David Koop, Saumen Dey (2014): **The PBase Scientific Workflow Provenance Repository**. _International Journal of Digital Curation_ **9**(2). [doi:10.2218/ijdc.v9i2.332](http://dx.doi.org/10.2218/ijdc.v9i2.332)
-7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/ [doi:10.5281/zenodo.46804](http://dx.doi.org/10.5281/zenodo.46804)
+7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. [http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/](http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/) [doi:10.5281/zenodo.46804](http://dx.doi.org/10.5281/zenodo.46804)
 8. Julie A McMurry, Niklas Blomberg, Tony Burdett, Nathalie Conte, Michel Dumontier, Donal Fellows, Alejandra Gonzalez-Beltran, Philipp Gormanns, Janna Hastings, Melissa A Haendel, Henning Hermjakob, Jean-Karim Hériché, Jon C Ison, Rafael C Jimenez, Simon Jupp, Nick Juty, Camille Laibe, Nicolas Le Novère, James Malone, Maria Jesus Martin, Johanna R McEntyre, Chris Morris, Juha Muilu, Wolfgang Müller, Christopher J Mungall, Philippe Rocca-Serra, Susanna-Assunta Sansone, Murat Sariyar, Jacky L Snoep, Natalie J Stanford, Neil Swainston, Nicole L Washington, Alan R Williams, Katherine Wolstencroft, Carole Goble, Helen Parkinson (2015): **10 Simple rules for design, provision, and reuse of identifiers for web-based life science data**. _Zenodo_. Submitted to PLoS Computational Biology.
 [doi:10.5281/zenodo.31765](http://dx.doi.org/10.5281/zenodo.31765)
