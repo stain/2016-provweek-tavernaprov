@@ -96,7 +96,7 @@ However keeping provenance only at the dataflow level
 could not easily represent "deeper" provenance such as the
 intermediate values of [while-loops](http://dev.mygrid.org.uk/wiki/display/tav250/Loops)
 or intermittent failures that were automatically recovered by Taverna's [retry mechanism](http://dev.mygrid.org.uk/wiki/display/tav250/Retries), as we wanted to
-avoid [unrolled workflow provenance](https://www.sci.utah.edu/publications/davidson07/davidson-provenance-lebull-07.pdf).
+avoid [unrolled workflow provenance](http://sites.computer.org/debull/A07dec/susan.pdf).
 
 
 Keeping the link between the workflow definition and execution is essential to
@@ -242,3 +242,4 @@ WORKS '14 Proceedings of the 9th Workshop on Workflows in Support of Large-Scale
 7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. [http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/](http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/) [doi:10.5281/zenodo.46804](http://dx.doi.org/10.5281/zenodo.46804)
 8. Julie A McMurry, Niklas Blomberg, Tony Burdett, Nathalie Conte, Michel Dumontier, Donal Fellows, Alejandra Gonzalez-Beltran, Philipp Gormanns, Janna Hastings, Melissa A Haendel, Henning Hermjakob, Jean-Karim Hériché, Jon C Ison, Rafael C Jimenez, Simon Jupp, Nick Juty, Camille Laibe, Nicolas Le Novère, James Malone, Maria Jesus Martin, Johanna R McEntyre, Chris Morris, Juha Muilu, Wolfgang Müller, Christopher J Mungall, Philippe Rocca-Serra, Susanna-Assunta Sansone, Murat Sariyar, Jacky L Snoep, Natalie J Stanford, Neil Swainston, Nicole L Washington, Alan R Williams, Katherine Wolstencroft, Carole Goble, Helen Parkinson (2015): **10 Simple rules for design, provision, and reuse of identifiers for web-based life science data**. _Zenodo_. Submitted to PLoS Computational Biology.
 [doi:10.5281/zenodo.31765](http://dx.doi.org/10.5281/zenodo.31765)
+9. Davidson, Susan B., Sarah Cohen Boulakia, Anat Eyal, Bertram Ludäscher, Timothy M. McPhillips, Shawn Bowers, Manish Kumar Anand, and Juliana Freire (2007): **Provenance in Scientific Workflow Systems.** IEEE Data Eng. Bull. 30, no. 4 (2007): 44-50.
