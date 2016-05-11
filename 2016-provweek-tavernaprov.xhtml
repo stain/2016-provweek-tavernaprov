@@ -77,21 +77,23 @@
 <body>
 
 <h1 id="tracking-workflow-execution-with-tavernaprov">Tracking workflow execution with TavernaProv</h1>
+<span>Document id: <a property="prov:specializationOf" href="https://github.com/stain/2016-provweek-tavernaprov/">https://github.com/stain/2016-provweek-tavernaprov/</a></span>
 <p class="authors">
 	<a property="pav:authoredBy prov:wasAttributedTo" href="http://orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a>,
   <a property="pav:contributedBy prov:wasAttributedTo" href="http://orcid.org/0000-0002-2224-0780">Pinar Alper</a>,
   <a property="pav:contributedBy prov:wasAttributedTo" href="http://orcid.org/0000-0003-1219-2137">Carole Goble</a>;  <a href="http://www.esciencelab.org.uk/">eScience Lab</a>, University of Manchester
 </p>
+
 <ul class="hidden-print hidden-xs hidden-sm">
-<li>Document id: <a property="prov:specializationOf" href="https://github.com/stain/2016-provweek-tavernaprov/">https://github.com/stain/2016-provweek-tavernaprov/</a></li>
+
 <li>In reply to: <a href="http://provenanceweek.org/2016/p3yl/">PROV: Three Years Later</a></li>
 <li>Published: 2016-05-09</li>
 <li>Modified: 2016-05-11</li>
 <li>License: <a property="dcterms:license" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></li>
 <li>Keywords:
-	<span property="prism:keyword">scientific workflow</span>
-	<span property="prism:keyword">provenance</span>
-	<span property="prism:keyword">research object</span>
+	<span property="prism:keyword">scientific workflow</span>,
+	<span property="prism:keyword">provenance</span>,
+	<span property="prism:keyword">research object</span>,
 	<span property="prism:keyword">reproducibility</span>
 </li>
 </ul>
@@ -101,7 +103,7 @@
 <p>Taverna also records provenance of the evolution of the workflow definition (including a chain of <code>wasDerivedFrom</code> relations), attributions and annotations; for brevity we here focus on how Taverna's workflow run provenance extends PROV and is embedded with Research Objects.</p>
 </section>
 
-<section id="data-bundle">">
+<section id="data-bundle">
 <h1>Data bundle</h1>
 <p>A workflow run can be exported from Taverna as a <a href="https://github.com/apache/incubator-taverna-engine/tree/master/taverna-prov#structure-of-exported-provenance">workflow data bundle</a>; a <a href="https://w3id.org/bundle/">Research Object bundle</a> <a href="ref3"></a> in the form of a ZIP archive that contains the <a href="https://taverna.incubator.apache.org/documentation/scufl2/">workflow definition</a> (itself a Research Object), annotations, inputs, outputs and intermediate values, and a <a href="https://www.w3.org/TR/prov-o/">PROV-O</a> trace of the workflow execution, showing every process execution within the workflow run, linking to the produced and consumed values using relative paths.</p>
 <p>A workflow run can thus be downloaded as a single file from a <a href="https://taverna.incubator.apache.org/download/server/">Taverna Server</a>, shared (<a href="http://myexperiment.org/">myExperiment</a>, <a href="http://seek4science.org/">SEEK</a>), published (<a href="http://www.rohub.org/">ROHub</a>, <a href="https://zenodo.org/">Zenodo</a>), imported in another <a href="https://taverna.incubator.apache.org/download/workbench/">Taverna Workbench</a>, shown in the <a href="https://github.com/apache/incubator-taverna-databundle-viewer">Databundle Viewer</a> or modified with the <a href="https://github.com/apache/incubator-taverna-language/tree/0.15.1-incubating/taverna-databundle">DataBundle API</a>.</p>
