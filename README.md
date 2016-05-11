@@ -1,37 +1,15 @@
 # Tracking workflow execution with TavernaProv
 
-_[Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
+* Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137),
-[Pinar Alper](http://orcid.org/0000-0002-2224-0780); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester_
+[Pinar Alper](http://orcid.org/0000-0002-2224-0780); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
+* Document id: https://github.com/stain/2016-provweek-tavernaprov/
+* In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
+* Published: 2016-05-09
+* Modified: 2016-05-11
+* License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 
-<small><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small>
-
-<!--
-The following is a non-exhaustive list of topics for position statemepents reporting on experiences and impact:
-
-    API and software that use PROV
-    Datasets and resources that use PROV
-    Impact of provenance
-    Scalability
-    Presentation and explanation of provenance to users
-    Multi-level provenance (provenance of provenance)
-    Tradeoff and choices of different serializations
-
-The following is a non-exhaustive list of topics for position statements reporting on interoperability and requirements:
-
-    Interoperability issues across serializations or within serializations
-    Missing features, expressivity shortcomings
-    Adoption hurdles
-    Security and provenance, provenance and signatures
-    Embedding provenance in various types of documents
-    Graphical representation of provenance
-    Inter-operability across standards
-    Extensions of PROV for additional requirements in different domains and applications
-    Abstraction of PROV records
-
-Authors are strongly encouraged, where appropriate, to make an explicit link between requirements and application needs.
-
--->
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
 [Apache Taverna](https://taverna.incubator.apache.org) [1] is a scientific workflow
 system for combining web services and local tools. Taverna
@@ -257,7 +235,7 @@ and usage.
 2. Paolo Missier, Satya Sahoo, Jun Zhao, Carole Goble, Amit Sheth. (2010): **Janus: from Workflows to Semantic Provenance and Linked Open Data** in _Provenance and Annotation of Data and Processes, Third International Provenance and Annotation Workshop, (IPAW'10)_, 15–16 Jun 2010. Springer, Berlin: 129–141. [doi:10.1007/978-3-642-17819-1_16](http://dx.doi.org/10.1007/978-3-642-17819-1_16) [[pdf]](http://tw.rpi.edu/media/2013/12/31/96a5/IPAW2010_FP_Missier.pdf)
 3. Stian Soiland-Reyes, Matthew Gamble, Robert Haines (2014): **Research Object Bundle 1.0**. _researchobject.org Specification_. https://w3id.org/bundle/ 2014-11-05.  [doi:10.5281/zenodo.12586](http://dx.doi.org/10.5281/zenodo.12586)  
 4. Khalid Belhajjame, Jun Zhao, Daniel Garijo, Matthew Gamble, Kristina Hettne, Raul Palma, Eleni Mina, Oscar Corcho, José Manuel Gómez-Pérez, Sean Bechhofer, Graham Klyne, Carole Goble (2015): **Using a suite of ontologies for preserving workflow-centric research objects**, _Web Semantics: Science, Services and Agents on the World Wide Web_. [doi:10.1016/j.websem.2015.01.003](http://dx.doi.org/doi:10.1016/j.websem.2015.01.003)
-5. Daniel Garijo, Yolanda Gil, Oscar Corcho (2014): **Towards workflow ecosystems through semantic and standard representations**. _ Proceeding
+5. Daniel Garijo, Yolanda Gil, Oscar Corcho (2014): **Towards workflow ecosystems through semantic and standard representations**. _Proceeding
 WORKS '14 Proceedings of the 9th Workshop on Workflows in Support of Large-Scale Science_. [doi:10.1109/WORKS.2014.13](http://dx.doi.org/10.1109/WORKS.2014.13) [[pdf]](http://conferences.computer.org/works/2014/papers/7067a094.pdf)
 6. Víctor Cuevas-Vicenttín, Parisa Kianmajd, Bertram Ludäscher, Paolo Missier, Fernando Chirigati, Yaxing Wei, David Koop, Saumen Dey (2014): **The PBase Scientific Workflow Provenance Repository**. _International Journal of Digital Curation_ **9**(2). [doi:10.2218/ijdc.v9i2.332](http://dx.doi.org/10.2218/ijdc.v9i2.332)
 7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/ [doi:10.5281/zenodo.46804](http://dx.doi.org/10.5281/zenodo.46804)
