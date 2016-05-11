@@ -78,16 +78,16 @@
 
 <h1 id="tracking-workflow-execution-with-tavernaprov">Tracking workflow execution with TavernaProv</h1>
 <p class="authors">
-	<a property="pav:authoredBy" href="http://orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a>,
-  <a property="pav:contributedBy" href="http://orcid.org/0000-0002-2224-0780">Pinar Alper</a>,
-  <a property="pav:contributedBy" href="http://orcid.org/0000-0003-1219-2137">Carole Goble</a>;  <a href="http://www.esciencelab.org.uk/">eScience Lab</a>, University of Manchester
+	<a property="pav:authoredBy prov:wasAttributedTo" href="http://orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a>,
+  <a property="pav:contributedBy prov:wasAttributedTo" href="http://orcid.org/0000-0002-2224-0780">Pinar Alper</a>,
+  <a property="pav:contributedBy prov:wasAttributedTo" href="http://orcid.org/0000-0003-1219-2137">Carole Goble</a>;  <a href="http://www.esciencelab.org.uk/">eScience Lab</a>, University of Manchester
 </p>
 <ul class="hidden-print hidden-xs hidden-sm">
 <li>Document id: <a property="prov:specializationOf" href="https://github.com/stain/2016-provweek-tavernaprov/">https://github.com/stain/2016-provweek-tavernaprov/</a></li>
 <li>In reply to: <a href="http://provenanceweek.org/2016/p3yl/">PROV: Three Years Later</a></li>
 <li>Published: 2016-05-09</li>
 <li>Modified: 2016-05-11</li>
-<li>License: <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></li>
+<li>License: <a property="dcterms:license" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></li>
 <li>Keywords:
 	<span property="prism:keyword">scientific workflow</span>
 	<span property="prism:keyword">provenance</span>
@@ -101,14 +101,14 @@
 <p>Taverna also records provenance of the evolution of the workflow definition (including a chain of <code>wasDerivedFrom</code> relations), attributions and annotations; for brevity we here focus on how Taverna's workflow run provenance extends PROV and is embedded with Research Objects.</p>
 </section>
 
-<section id="bibreflist">
-<h1 id="data-bundle">Data bundle</h1>
+<section id="data-bundle">">
+<h1>Data bundle</h1>
 <p>A workflow run can be exported from Taverna as a <a href="https://github.com/apache/incubator-taverna-engine/tree/master/taverna-prov#structure-of-exported-provenance">workflow data bundle</a>; a <a href="https://w3id.org/bundle/">Research Object bundle</a> <a href="ref3"></a> in the form of a ZIP archive that contains the <a href="https://taverna.incubator.apache.org/documentation/scufl2/">workflow definition</a> (itself a Research Object), annotations, inputs, outputs and intermediate values, and a <a href="https://www.w3.org/TR/prov-o/">PROV-O</a> trace of the workflow execution, showing every process execution within the workflow run, linking to the produced and consumed values using relative paths.</p>
 <p>A workflow run can thus be downloaded as a single file from a <a href="https://taverna.incubator.apache.org/download/server/">Taverna Server</a>, shared (<a href="http://myexperiment.org/">myExperiment</a>, <a href="http://seek4science.org/">SEEK</a>), published (<a href="http://www.rohub.org/">ROHub</a>, <a href="https://zenodo.org/">Zenodo</a>), imported in another <a href="https://taverna.incubator.apache.org/download/workbench/">Taverna Workbench</a>, shown in the <a href="https://github.com/apache/incubator-taverna-databundle-viewer">Databundle Viewer</a> or modified with the <a href="https://github.com/apache/incubator-taverna-language/tree/0.15.1-incubating/taverna-databundle">DataBundle API</a>.</p>
 </section>
 
-<section>
-<h2 id="abstraction-levels">Abstraction levels</h2>
+<section id="abstraction-levels">
+<h2>Abstraction levels</h2>
 <p><a href="https://www.w3.org/TR/prov-dm/">PROV</a> is a generic model for describing provenance. While this means there are generally many multiple ways to express the same history in PROV, a scientific workflow run with processors and data values naturally match the <a href="(https://www.w3.org/TR/prov-dm/#term-entity)"><code>Activity</code></a> and <a href="https://www.w3.org/TR/prov-dm/#term-entity"><code>Entity</code></a> relations <a href="https://www.w3.org/TR/prov-dm/#dfn-wasgeneratedby"><code>wasGeneratedBy</code></a> and <a href="https://www.w3.org/TR/prov-dm/#dfn-used"><code>used</code></a>.</p>
 <p>However, using PROV-O to describe the details of a Taverna execution meant a significant <a href="https://github.com/apache/incubator-taverna-engine/blob/master/taverna-prov/example/helloanyone.bundle/workflowrun.prov.ttl">increase in verbosity</a>. To simplify query and interoperability with PROV tools, we declare relations both with <a href="https://www.w3.org/TR/prov-o/#description-starting-point-terms">starting point terms</a> and as <a href="https://www.w3.org/TR/prov-o/#description-qualified-terms">qualified terms</a>, e.g. to represent an <code>Activity</code> that used different values as different input parameters, we provide both a direct <a href="http://www.w3.org/TR/prov-o/#used">used</a>, but also a <a href="http://www.w3.org/TR/prov-o/#qualifiedUsage">qualifiedUsage</a> to a <a href="http://www.w3.org/TR/prov-o/#Usage">Usage</a> that specify <a href="http://www.w3.org/TR/prov-o/#hadRole">hadRole</a> and <a href="http://www.w3.org/TR/prov-o/entity">entity</a>.</p>
 
@@ -122,8 +122,8 @@
 <p>The duality between wfdesc and wfprov is similar to the &quot;future provenance&quot; model of <a href="http://purl.org/net/p-plan">P-Plan</a> and <a href="ttp://www.opmw.org/model/OPMW/#WorkflowTemplateProcess">OPMW</a> and its <a href="http://www.isi.edu/~gil/papers/garijo-etal-works14.pdf">workflow templates</a> <a href="ref5"></a>, and similarly the the split between &quot;prospective provenance&quot; and &quot;retrospective provenance&quot; of the <a href="http://vcvcomputing.com/provone/provone.html">ProvONE Data Model for Scientific Workflow Provenance</a>. <a href="ref6"></a></p>
 </section>
 
-<section>
-<h2 id="identifiers-and-interoperability">Identifiers and interoperability</h2>
+<section id="identifiers-and-interoperability">
+<h2>Identifiers and interoperability</h2>
 <p>A great advantage of using Linked Data was that we could use the same identifiers in all three formats. One challenge was that Taverna workflows are often run within a desktop user interface or on the command line, and with privacy concerns we didn't have the luxury of a server to mint URIs; we already <a href="http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/">learnt our lesson with LSIDs</a>. <a href="ref7"></a></p>
 <p>Taverna therefore generate UUID-based structured <code>http://</code> URIs within <a href="http://ns.taverna.org.uk/">our namespaces</a>, e.g. <code>http://ns.taverna.org.uk/2011/run/d5ee659e-e11e-43a5-bc0a-58d93674e5e2/process/1e027057-2aeb-47f7-97dc-03e19e9772be/</code> and <code>http://ns.taverna.org.uk/2010/workflowBundle/2f0e94ef-b5c4-455d-aeab-1e9611f46b8b/workflow/HelloWorld/processor/hello/</code></p>
 <p>The <a href="https://github.com/stain/scufl2-info">scufl2-info</a> web-service provide a minimal <a href="http://json-ld.org/">JSON-LD</a> wfprov/wfdesc representation identifying the URI as a provenance or workflow item, but (by design) not having access to the data bundle it can't say anything more.</p>
@@ -131,19 +131,19 @@
 <p>Similarly, <a href="https://www.w3.org/TR/owl2-profiles/#Reasoning_in_OWL_2_RL_and_RDF_Graphs_using_Rules">OWL reasoning</a> is not generally applied by PROV-O consumers, so even though <em>wfprov</em> formally extends PROV in its ontology definitions, we needed to add explicitly the implied PROV-O statements in TavernaProv's Turtle output.</p>
 </section>
 
-<section>
-<h2 id="common-workflow-language">Common Workflow Language</h2>
+<section id="common-workflow-language">
+<h2>Common Workflow Language</h2>
 <p><a href="http://commonwl.org/">Common Workflow Language</a> has created a workflow language <a href="http://www.commonwl.org/draft-3/">specification</a>, a reference implementation <a href="https://github.com/common-workflow-language/cwltool">cwltool</a>, and a large <a href="http://www.commonwl.org/#Participating_Organizations">community</a> of workflow system developers who are adding CWL support across bioinformatics, including Apache Taverna and Galaxy. Unlike wfdesc, OPMW and P-Plan, CWL workflows are primarily intended to be executed, with a strong emphasis on the dataflow between command line tools packaged as <a href="https://docker.com/">Docker</a> images.</p>
 <p>CWL is specified using <a href="http://www.commonwl.org/draft-3/SchemaSalad.html">Schema Salad</a>, which provides <a href="http://json-ld.org/">JSON-LD</a> constructs in <a href="http://yaml.org/">YAML</a>. The CWL dataflow model is inspired by wfdesc and Apache Taverna and thus have similar execution semantics and provenance requirements. CWL is <a href="https://github.com/common-workflow-language/common-workflow-language/issues/84">planning its provenance format</a> based on PROV-O, wfprov and JSON-LD. As one of the CWL adopters, Apache Taverna will naturally also aim to support the CWL provenance model.</p>
 </section>
 
-<section>
-<h2 id="future-work">Future work</h2>
+<section id="future-work">
+<h2>Future work</h2>
 <p>To face the verbosity issue, we are considering to split out wfprov statements to a different file; as a ZIP archive the Taverna Data Bundle can contain many provenance formats. Similarly splitting out the details using PROV-O Qualified Terms to a separate file is worth considering, this could also improve PROV visualization of workflow provenance. Having such separate <a href="https://www.w3.org/TR/prov-dm/#component4">PROV bundles</a> would also make it easier for Taverna to support the ProvONE model as an additional format.</p>
 <p><a href="https://www.w3.org/TR/prov-links/">PROV Links</a> could be added to Research Object Bundles to relate its data files to the then multiple workflow provenance traces that describe their generation and usage.</p>
 </section>
 
-<section role="doc-bibliography">
+<section id="bibliography" role="doc-bibliography">
 <h2 id="references">References</h2>
 <ol type="1" class="references">
 <li id="ref1">Katherine Wolstencroft, Robert Haines, Donal Fellows, Alan Williams, David Withers, Stuart Owen, Stian Soiland-Reyes, Ian Dunlop, Aleksandra Nenadic, Paul Fisher, Jiten Bhagat, Khalid Belhajjame, Finn Bacall, Alex Hardisty, Abraham Nieva de la Hidalga, Maria P. Balcazar Vargas, Shoaib Sufi, Carole Goble (2013): <strong>The Taverna workflow suite: designing and executing workflows of Web Services on the desktop, web or in the cloud.</strong> In: <em>Nucleic Acids Research</em>, <strong>41</strong>(W1): W557–W561. <a href="http://dx.doi.org/10.1093/nar/gkt328">doi:10.1093/nar/gkt328</a></li>
