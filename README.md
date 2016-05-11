@@ -73,13 +73,6 @@ both a direct [used](http://www.w3.org/TR/prov-o/#used), but also a
 [Usage](http://www.w3.org/TR/prov-o/#Usage) that specify [hadRole](http://www.w3.org/TR/prov-o/#hadRole) and [entity](http://www.w3.org/TR/prov-o/entity).
 
 
-<!--
-"PROV as an XML"
-
-Develop more the CWL and if you can lever in Research Objects all to the good
-Needs a summary of thoughts wrt PROV and where its strengths/weaknesses for workflow collection in practice.
--->
-
 PROV deliberately does not mandate how to make the
 design decisions on
 what activities, entities
