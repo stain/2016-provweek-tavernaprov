@@ -9,6 +9,8 @@
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
 * Modified: 2016-05-11
+* Accepted: 2016-05-16
+* Presented: `TODO`
 * License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 * Keywords:
   + scientific workflow
