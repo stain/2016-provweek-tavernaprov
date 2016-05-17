@@ -1,5 +1,7 @@
 # Tracking workflow execution with TavernaProv
 
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51314.svg)](http://dx.doi.org/10.5281/zenodo.51314)
+
 * Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Pinar Alper](http://orcid.org/0000-0002-2224-0780),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
