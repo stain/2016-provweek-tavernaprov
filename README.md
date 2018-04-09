@@ -1,16 +1,17 @@
 # Tracking workflow execution with TavernaProv
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51314.svg)](http://dx.doi.org/10.5281/zenodo.51314)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51314.svg)](https://doi.org/10.5281/zenodo.51314)
 
 * Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Pinar Alper](http://orcid.org/0000-0002-2224-0780),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
-* Document id: https://github.com/stain/2016-provweek-tavernaprov/
+* Document id: https://github.com/stain/2016-provweek-tavernaprov/ 
+* DOI: https://doi.org/10.5281/zenodo.51314
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
 * Modified: 2016-05-11
 * Accepted: 2016-05-16
-* Presented: `TODO`
+* Presented: 2016-06-06 (Pinar Alper)
 * License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 * Keywords:
   + scientific workflow
