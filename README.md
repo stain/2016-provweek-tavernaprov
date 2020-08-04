@@ -5,13 +5,15 @@
 * Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
 [Pinar Alper](http://orcid.org/0000-0002-2224-0780),
 [Carole Goble](http://orcid.org/0000-0003-1219-2137); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
-* Document id: https://github.com/stain/2016-provweek-tavernaprov/ 
+* Document id: <https://github.com/stain/2016-provweek-tavernaprov/>
+* Mirror: <https://s11.no/2016/provweek-tavernaprov/>
 * DOI: https://doi.org/10.5281/zenodo.51314
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
 * Modified: 2016-05-11
 * Accepted: 2016-05-16
 * Presented: 2016-06-06 (Pinar Alper)
+* Mirrored: 2020-08-04 (moved to s11.no)
 * License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 * Keywords:
   + scientific workflow
@@ -19,9 +21,9 @@
   + research object
   + reproducibility
 * Also available in formats:
-  + [xhtml](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
-  + [pdf](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.pdf)
-  + [turtle](http://rdf.greggkellogg.net/distiller?format=turtle&in_fmt=rdfa&uri=https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
+  + [xhtml](https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml)
+  + [pdf](https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.pdf)
+  + [turtle](https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.ttl)
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>

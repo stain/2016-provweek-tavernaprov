@@ -1,0 +1,43 @@
+@base <https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+
+<https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml> <http://prismstandard.org/namespaces/basic/2.0/keyword> "research object"@en,
+    "reproducibility"@en,
+    "scientific workflow"@en,
+    "provenance"@en;
+  dc:license <http://creativecommons.org/licenses/by/4.0/>;
+  <http://purl.org/pav/authoredBy> <http://orcid.org/0000-0001-9842-9718>;
+  <http://purl.org/pav/contributedBy> <http://orcid.org/0000-0002-2224-0780>,
+    <http://orcid.org/0000-0003-1219-2137>;
+  xhv:license <http://creativecommons.org/licenses/by/4.0/>;
+  <http://www.w3.org/ns/provspecializationOf> <https://github.com/stain/2016-provweek-tavernaprov/>;
+  <http://www.w3.org/ns/provwasAttributedTo> <http://orcid.org/0000-0002-2224-0780>,
+    <http://orcid.org/0000-0001-9842-9718>,
+    <http://orcid.org/0000-0003-1219-2137> .
+
+<https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#abstract> xhv:role xhv:doc-abstract .
+
+<https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#bibliography> xhv:role xhv:doc-bibliography .
+
+<http://orcid.org/0000-0001-9842-9718> schema:affiliation <https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#esciencelab>;
+  schema:email "soiland-reyes@manchester.ac.uk"@en;
+  schema:name "Stian Soiland-Reyes"@en;
+  foaf:name "Stian Soiland-Reyes"@en .
+
+<http://orcid.org/0000-0002-2224-0780> schema:affiliation <https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#esciencelab>;
+  schema:email "pinarpink@yahoo.com"@en;
+  schema:name "Pinar Alper"@en;
+  foaf:name "Pinar Alper"@en .
+
+<http://orcid.org/0000-0003-1219-2137> schema:affiliation <https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#esciencelab>;
+  schema:email "carole.goble@manchester.ac.uk"@en;
+  foaf:name "Carole Goble"@en .
+
+<https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml#esciencelab> schema:name """eScience Lab, School of Computer Science,
+				         Uuniversity of Manchester, UK"""@en;
+  schema:url <http://esciencelab.org.uk/>;
+  foaf:homepage <http://esciencelab.org.uk/> .

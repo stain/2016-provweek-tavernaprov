@@ -32,6 +32,7 @@ summary: |
 [Pinar Alper](https://orcid.org/0000-0002-2224-0780),
 [Carole Goble](https://orcid.org/0000-0003-1219-2137); [eScience Lab](https://www.esciencelab.org.uk/), University of Manchester
 * Document id: <https://github.com/stain/2016-provweek-tavernaprov/>
+* Mirror: <https://s11.no/2016/provweek-tavernaprov/>
 * DOI: <https://doi.org/10.5281/zenodo.51314>
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
@@ -48,7 +49,7 @@ summary: |
 * Also available in formats:
   + [xhtml](2016-provweek-tavernaprov.xhtml)
   + [pdf](2016-provweek-tavernaprov.pdf)
-  + [turtle](http://rdf.greggkellogg.net/distiller?format=turtle&in_fmt=rdfa&uri=https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml)
+  + [turtle](2016-provweek-tavernaprov.ttl)
 
 
 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
