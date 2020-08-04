@@ -1,57 +1,30 @@
----
-title: "Tracking workflow execution with TavernaProv"
-date: 2016-05-09
-lastmod: 2020-08-04
-tags:
-  - workflows
-  - provenance
-  - research object
-  - reproducibility
-keywords:
-  - scientific workflows
-  - provenance
-  - research object
-  - reproducibility
-categories:
-  - Publication
-author: 
-  - Stian Soiland-Reyes, Pinar Alper, Carole Goble
-summary: |
-  Apache Taverna is a scientific workflow system for combining web services and local tools. Taverna records provenance of workflow runs, intermediate values and user interactions, both as an aid for debugging while designing the workflow, but also as a record for later reproducibility and comparison.
-
-  Taverna also records provenance of the evolution of the workflow definition (including a chain of wasDerivedFrom relations), attributions and annotations; for brevity we here focus on how Taverna's workflow run provenance extends PROV and is embedded with Research Objects.
----
-
-<!--
 # Tracking workflow execution with TavernaProv
--->
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51314.svg)](https://doi.org/10.5281/zenodo.51314)
 
-* Authors: [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718),
-[Pinar Alper](https://orcid.org/0000-0002-2224-0780),
-[Carole Goble](https://orcid.org/0000-0003-1219-2137); [eScience Lab](https://www.esciencelab.org.uk/), University of Manchester
-* Document id: <https://github.com/stain/2016-provweek-tavernaprov/>
-* DOI: <https://doi.org/10.5281/zenodo.51314>
+* Authors: [Stian Soiland-Reyes](http://orcid.org/0000-0001-9842-9718),
+[Pinar Alper](http://orcid.org/0000-0002-2224-0780),
+[Carole Goble](http://orcid.org/0000-0003-1219-2137); [eScience Lab](http://www.esciencelab.org.uk/), University of Manchester
+* Document id: https://github.com/stain/2016-provweek-tavernaprov/ 
+* DOI: https://doi.org/10.5281/zenodo.51314
 * In reply to: [PROV: Three Years Later](http://provenanceweek.org/2016/p3yl/)
 * Published: 2016-05-09
 * Modified: 2016-05-11
 * Accepted: 2016-05-16
 * Presented: 2016-06-06 (Pinar Alper)
-* Mirrored: 2020-08-04 (moved to s11.no)
-* License:  <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+* License:  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 * Keywords:
   + scientific workflow
   + provenance
   + research object
   + reproducibility
 * Also available in formats:
-  + [xhtml](2016-provweek-tavernaprov.xhtml)
-  + [pdf](2016-provweek-tavernaprov.pdf)
-  + [turtle](http://rdf.greggkellogg.net/distiller?format=turtle&in_fmt=rdfa&uri=https://s11.no/2016/provweek-tavernaprov/2016-provweek-tavernaprov.xhtml)
+  + [xhtml](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
+  + [pdf](https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.pdf)
+  + [turtle](http://rdf.greggkellogg.net/distiller?format=turtle&in_fmt=rdfa&uri=https://cdn.rawgit.com/stain/2016-provweek-tavernaprov/submitted/2016-provweek-tavernaprov.xhtml)
 
 
-<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
 [Apache Taverna](https://taverna.incubator.apache.org) [1] is a scientific workflow
 system for combining web services and local tools. Taverna
@@ -268,15 +241,14 @@ and usage.
 
 ## References
 
-1.  Katherine Wolstencroft, Robert Haines, Donal Fellows, Alan Williams, David Withers, Stuart Owen, Stian Soiland-Reyes, Ian Dunlop, Aleksandra Nenadic, Paul Fisher, Jiten Bhagat, Khalid Belhajjame, Finn Bacall, Alex Hardisty, Abraham Nieva de la Hidalga, Maria P. Balcazar Vargas, Shoaib Sufi, Carole Goble (2013): **The Taverna workflow suite: designing and executing workflows of Web Services on the desktop, web or in the cloud.** In: _Nucleic Acids Research_, **41**(W1): W557–W561. [doi:10.1093/nar/gkt328](https://doi.org/10.1093/nar/gkt328)
-2. Paolo Missier, Satya Sahoo, Jun Zhao, Carole Goble, Amit Sheth. (2010): **Janus: from Workflows to Semantic Provenance and Linked Open Data** in _Provenance and Annotation of Data and Processes, Third International Provenance and Annotation Workshop, (IPAW'10)_, 15–16 Jun 2010. Springer, Berlin: 129–141. [doi:10.1007/978-3-642-17819-1_16](https://doi.org/10.1007/978-3-642-17819-1_16) [[pdf]](http://tw.rpi.edu/media/2013/12/31/96a5/IPAW2010_FP_Missier.pdf)
-3. Stian Soiland-Reyes, Matthew Gamble, Robert Haines (2014): **Research Object Bundle 1.0**. _researchobject.org Specification_. [https://w3id.org/bundle/](https://w3id.org/bundle/) 2014-11-05. [doi:10.5281/zenodo.12586](https://doi.org/10.5281/zenodo.12586)  
-4. Khalid Belhajjame, Jun Zhao, Daniel Garijo, Matthew Gamble, Kristina Hettne, Raul Palma, Eleni Mina, Oscar Corcho, José Manuel Gómez-Pérez, Sean Bechhofer, Graham Klyne, Carole Goble (2015): **Using a suite of ontologies for preserving workflow-centric research objects**, _Web Semantics: Science, Services and Agents on the World Wide Web_. [doi:10.1016/j.websem.2015.01.003](https://doi.org/doi:10.1016/j.websem.2015.01.003)
+1.  Katherine Wolstencroft, Robert Haines, Donal Fellows, Alan Williams, David Withers, Stuart Owen, Stian Soiland-Reyes, Ian Dunlop, Aleksandra Nenadic, Paul Fisher, Jiten Bhagat, Khalid Belhajjame, Finn Bacall, Alex Hardisty, Abraham Nieva de la Hidalga, Maria P. Balcazar Vargas, Shoaib Sufi, Carole Goble (2013): **The Taverna workflow suite: designing and executing workflows of Web Services on the desktop, web or in the cloud.** In: _Nucleic Acids Research_, **41**(W1): W557–W561. [doi:10.1093/nar/gkt328](http://dx.doi.org/10.1093/nar/gkt328)
+2. Paolo Missier, Satya Sahoo, Jun Zhao, Carole Goble, Amit Sheth. (2010): **Janus: from Workflows to Semantic Provenance and Linked Open Data** in _Provenance and Annotation of Data and Processes, Third International Provenance and Annotation Workshop, (IPAW'10)_, 15–16 Jun 2010. Springer, Berlin: 129–141. [doi:10.1007/978-3-642-17819-1_16](http://dx.doi.org/10.1007/978-3-642-17819-1_16) [[pdf]](http://tw.rpi.edu/media/2013/12/31/96a5/IPAW2010_FP_Missier.pdf)
+3. Stian Soiland-Reyes, Matthew Gamble, Robert Haines (2014): **Research Object Bundle 1.0**. _researchobject.org Specification_. [https://w3id.org/bundle/](https://w3id.org/bundle/) 2014-11-05. [doi:10.5281/zenodo.12586](http://dx.doi.org/10.5281/zenodo.12586)  
+4. Khalid Belhajjame, Jun Zhao, Daniel Garijo, Matthew Gamble, Kristina Hettne, Raul Palma, Eleni Mina, Oscar Corcho, José Manuel Gómez-Pérez, Sean Bechhofer, Graham Klyne, Carole Goble (2015): **Using a suite of ontologies for preserving workflow-centric research objects**, _Web Semantics: Science, Services and Agents on the World Wide Web_. [doi:10.1016/j.websem.2015.01.003](http://dx.doi.org/doi:10.1016/j.websem.2015.01.003)
 5. Daniel Garijo, Yolanda Gil, Oscar Corcho (2014): **Towards workflow ecosystems through semantic and standard representations**. _Proceeding
-WORKS '14 Proceedings of the 9th Workshop on Workflows in Support of Large-Scale Science_. [doi:10.1109/WORKS.2014.13](https://doi.org/10.1109/WORKS.2014.13) [[pdf]](http://conferences.computer.org/works/2014/papers/7067a094.pdf)
-6. Víctor Cuevas-Vicenttín, Parisa Kianmajd, Bertram Ludäscher, Paolo Missier, Fernando Chirigati, Yaxing Wei, David Koop, Saumen Dey (2014): **The PBase Scientific Workflow Provenance Repository**. _International Journal of Digital Curation_ **9**(2). [doi:10.2218/ijdc.v9i2.332](https://doi.org/10.2218/ijdc.v9i2.332)
-7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. [http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/](http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/) [doi:10.5281/zenodo.46804](https://doi.org/10.5281/zenodo.46804)
+WORKS '14 Proceedings of the 9th Workshop on Workflows in Support of Large-Scale Science_. [doi:10.1109/WORKS.2014.13](http://dx.doi.org/10.1109/WORKS.2014.13) [[pdf]](http://conferences.computer.org/works/2014/papers/7067a094.pdf)
+6. Víctor Cuevas-Vicenttín, Parisa Kianmajd, Bertram Ludäscher, Paolo Missier, Fernando Chirigati, Yaxing Wei, David Koop, Saumen Dey (2014): **The PBase Scientific Workflow Provenance Repository**. _International Journal of Digital Curation_ **9**(2). [doi:10.2218/ijdc.v9i2.332](http://dx.doi.org/10.2218/ijdc.v9i2.332)
+7. Stian Soiland-Reyes, Alan R Williams (2016): **What exactly happened to LSID?** _myGrid developer blog_, 2016-02-26. [http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/](http://dev.mygrid.org.uk/blog/2016/02/what-exactly-happened-to-lsid/) [doi:10.5281/zenodo.46804](http://dx.doi.org/10.5281/zenodo.46804)
 8. Julie A McMurry, Niklas Blomberg, Tony Burdett, Nathalie Conte, Michel Dumontier, Donal Fellows, Alejandra Gonzalez-Beltran, Philipp Gormanns, Janna Hastings, Melissa A Haendel, Henning Hermjakob, Jean-Karim Hériché, Jon C Ison, Rafael C Jimenez, Simon Jupp, Nick Juty, Camille Laibe, Nicolas Le Novère, James Malone, Maria Jesus Martin, Johanna R McEntyre, Chris Morris, Juha Muilu, Wolfgang Müller, Christopher J Mungall, Philippe Rocca-Serra, Susanna-Assunta Sansone, Murat Sariyar, Jacky L Snoep, Natalie J Stanford, Neil Swainston, Nicole L Washington, Alan R Williams, Katherine Wolstencroft, Carole Goble, Helen Parkinson (2015): **10 Simple rules for design, provision, and reuse of identifiers for web-based life science data**. _Zenodo_. Submitted to PLoS Computational Biology.
-[doi:10.5281/zenodo.31765](https://doi.org/10.5281/zenodo.31765)
+[doi:10.5281/zenodo.31765](http://dx.doi.org/10.5281/zenodo.31765)
 9. Davidson, Susan B., Sarah Cohen Boulakia, Anat Eyal, Bertram Ludäscher, Timothy M. McPhillips, Shawn Bowers, Manish Kumar Anand, and Juliana Freire (2007): **Provenance in Scientific Workflow Systems.** IEEE Data Eng. Bull. 30, no. 4 (2007): 44-50.
-
